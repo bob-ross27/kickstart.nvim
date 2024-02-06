@@ -60,12 +60,18 @@ return {
   },
 
   -- Automatic bracket pairs
-  'jiangmiao/auto-pairs',
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {},
+  },
 
   -- Edit files/directories as a buffer
   {
     'stevearc/oil.nvim',
-    opts = {},
+    opts = {
+      skip_confirm_for_simple_edits = true,
+    },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
@@ -105,4 +111,19 @@ return {
 
   -- Harpoon
   'ThePrimeagen/harpoon',
+
+  -- Telescope UI for Code Actions
+  {
+    'nvim-telescope/telescope-ui-select.nvim',
+    config = function()
+      require('telescope').setup {
+        extensions = {
+          ['ui-select'] = {
+            require('telescope.themes').get_dropdown {},
+          },
+        },
+      }
+      require('telescope').load_extension 'ui-select'
+    end,
+  },
 }
