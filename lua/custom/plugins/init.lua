@@ -36,6 +36,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'black' },
+        javascript = { 'prettierd' },
       },
       formatters = {
         black = {
@@ -93,6 +94,8 @@ return {
         'black',
         'stylua',
         'debugpy',
+        'prettierd',
+        'eslint',
       },
     },
   },

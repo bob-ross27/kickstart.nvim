@@ -582,6 +582,7 @@ local servers = {
   -- gopls = {},
   pyright = {},
   ruff_lsp = {},
+  eslint = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -672,14 +673,6 @@ cmp.setup {
     { name = 'path' },
   },
 }
-
--- Set autoformatting using conform
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*',
-  callback = function(args)
-    require('conform').format { bufnr = args.buf }
-  end,
-})
 
 -- [[ Setting options ]]
 require 'options'
