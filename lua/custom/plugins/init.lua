@@ -25,6 +25,9 @@ return {
         width = 0.80,
       },
     },
+    keys = {
+      { '<leader>cm', '<cmd>ZenMode<cr>', desc = '[Z]en [M]ode' },
+    },
   },
 
   -- Automatic formatting
@@ -70,10 +73,14 @@ return {
   -- Edit files/directories as a buffer
   {
     'stevearc/oil.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    lazy = false,
     opts = {
       skip_confirm_for_simple_edits = true,
     },
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = {
+      { '<M-b>', '<cmd>Oil<cr>', desc = 'Oil' },
+    },
   },
 
   -- Searchable command reference with :CheatSheet
@@ -112,8 +119,22 @@ return {
     filter_percent = 0.35,
   } },
 
-  -- Harpoon
-  'ThePrimeagen/harpoon',
+  -- harpoon
+  {
+    'theprimeagen/harpoon',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    keys = {
+      { '<leader>ma', "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = '[m]ark file' },
+      { '<leader>md', "<cmd>lua require('harpoon.mark').rm_file()<cr>", desc = '[d]elete file' },
+      { '<leader>mt', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = '[t]oggle quick menu' },
+      { '<M-h>', "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = 'mark 1' },
+      { '<M-j>', "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = 'mark 2' },
+      { '<M-k>', "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = 'mark 3' },
+      { '<M-l>', "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = 'mark 4' },
+    },
+  },
 
   -- Telescope UI for Code Actions
   {
