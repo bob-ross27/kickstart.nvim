@@ -208,4 +208,8 @@ return {
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
   },
+  {
+    'max397574/better-escape.nvim',
+    opts = {},
+  },
 }
