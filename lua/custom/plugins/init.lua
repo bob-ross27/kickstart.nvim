@@ -30,26 +30,6 @@ return {
     },
   },
 
-  -- Automatic formatting
-  {
-    'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
-    opts = {
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { 'black' },
-        javascript = { 'prettierd' },
-      },
-      formatters = {
-        black = {
-          prepend_args = { '--preview' },
-        },
-      },
-      format_on_save = { timeout_ms = 500, lsp_fallback = true },
-    },
-  },
-
   -- Maintain context (function name/loops) at top of buffer
   'nvim-treesitter/nvim-treesitter-context',
 
@@ -90,20 +70,6 @@ return {
       'nvim-telescope/telescope.nvim',
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
-    },
-  },
-
-  --  Automatically install tools through Mason
-  {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-    opts = {
-      ensure_installed = {
-        'black',
-        'stylua',
-        'debugpy',
-        'prettierd',
-        'eslint',
-      },
     },
   },
 
