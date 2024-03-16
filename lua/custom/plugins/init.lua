@@ -12,7 +12,7 @@ return {
     opts = {
       transparent_background = true,
     },
-    config = function()
+    init = function()
       vim.cmd.colorscheme 'catppuccin'
       vim.cmd.hi 'Comment gui=none'
     end,
