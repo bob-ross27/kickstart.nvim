@@ -58,9 +58,14 @@ return {
     lazy = false,
     opts = {
       skip_confirm_for_simple_edits = true,
+      float = {
+        padding = 10,
+        max_width = 0,
+        max_height = 0,
+      },
     },
     keys = {
-      { '<M-b>', '<cmd>Oil<cr>', desc = 'Oil' },
+      { '<M-b>', '<cmd>Oil --float<cr>', desc = 'Oil' },
     },
   },
 
