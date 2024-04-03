@@ -192,4 +192,13 @@ return {
       require('lsp_signature').setup(opts)
     end,
   },
+  {
+    'danymat/neogen',
+    config = function()
+      require('neogen').setup { snippet_engine = 'luasnip' }
+    end,
+    keys = {
+      { '<leader>cd', "<cmd>lua require('neogen').generate({ type = 'func'})<cr>", desc = 'Generate [d]ocs' },
+    },
+  },
 }
