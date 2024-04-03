@@ -546,6 +546,13 @@ require('lazy').setup({
         pyright = {},
         ruff_lsp = {},
         eslint = {},
+        tsserver = {
+          settings = {
+            implicitProjectConfiguration = {
+              checkJs = true,
+            },
+          },
+        },
         -- clangd = {},
         -- gopls = {},
         -- rust_analyzer = {},
@@ -591,6 +598,7 @@ require('lazy').setup({
         'debugpy',
         'prettierd',
         'eslint',
+        'tsserver',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
