@@ -8,8 +8,8 @@ vim.keymap.set('n', '<leader>Y', [["+Y]]) -- ????
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]]) -- Delete without overwriting register
 
 -- Harpoon
-require('which-key').register {
-  ['<leader>m'] = { name = 'Harpoon', _ = 'which_key_ignore' },
+require('which-key').add {
+  { '<leader>m', group = 'Harpoon' },
 }
 
 -- Delete buffer
