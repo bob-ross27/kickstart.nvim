@@ -84,20 +84,25 @@ return {
     filter_percent = 0.35,
   } },
 
-  -- harpoon
   {
-    'theprimeagen/harpoon',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
+    'cbochs/grapple.nvim',
+    opts = {
+      scope = 'git',
     },
+    event = { 'BufReadPost', 'BufNewFile' },
+    cmd = 'Grapple',
     keys = {
-      { '<leader>ma', "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = '[m]ark file' },
-      { '<leader>md', "<cmd>lua require('harpoon.mark').rm_file()<cr>", desc = '[d]elete file' },
-      { '<leader>mt', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = '[t]oggle quick menu' },
-      { '<M-h>', "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = 'mark 1' },
-      { '<M-j>', "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = 'mark 2' },
-      { '<M-k>', "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = 'mark 3' },
-      { '<M-l>', "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = 'mark 4' },
+      { '<leader>mm', '<cmd>Grapple toggle<cr>', desc = 'Grapple toggle tag' },
+      { '<leader>mt', '<cmd>Grapple toggle_tags<cr>', desc = 'Grapple open tags window' },
+      { '<leader>mn', '<cmd>Grapple cycle_tags next<cr>', desc = 'Grapple cycle [n]ext tag' },
+      { '<leader>mp', '<cmd>Grapple cycle_tags prev<cr>', desc = 'Grapple cycle [p]revious tag' },
+      { '<M-h>', '<cmd>Grapple select index=1<cr>', desc = 'Select first tag' },
+      { '<M-j>', '<cmd>Grapple select index=2<cr>', desc = 'Select second tag' },
+      { '<M-k>', '<cmd>Grapple select index=3<cr>', desc = 'Select third tag' },
+      { '<M-l>', '<cmd>Grapple select index=4<cr>', desc = 'Select fourth tag' },
+    },
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
     },
   },
 
