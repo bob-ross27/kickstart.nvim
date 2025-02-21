@@ -7,9 +7,9 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]]) -- Yank to OS clipboard
 vim.keymap.set('n', '<leader>Y', [["+Y]]) -- ????
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]]) -- Delete without overwriting register
 
--- Harpoon
+-- Grapple
 require('which-key').add {
-  { '<leader>m', group = 'Harpoon' },
+  { '<leader>m', group = 'Grapple' },
 }
 
 -- Delete buffer
