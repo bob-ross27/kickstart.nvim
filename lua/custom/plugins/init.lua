@@ -44,13 +44,6 @@ return {
     },
   },
 
-  -- Automatic bracket pairs
-  -- {
-  --   'windwp/nvim-autopairs',
-  --   event = 'InsertEnter',
-  --   opts = {},
-  -- },
-
   -- Edit files/directories as a buffer
   {
     'stevearc/oil.nvim',
