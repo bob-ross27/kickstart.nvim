@@ -672,6 +672,7 @@ require('lazy').setup({
             },
           },
         },
+        ansiblels = {},
         -- clangd = {},
         -- gopls = {},
         -- rust_analyzer = {},
@@ -721,8 +722,11 @@ require('lazy').setup({
         'prettierd',
         'eslint',
         'ts_ls',
+        'ansiblels',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      require('lspconfig').gleam.setup {}
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
