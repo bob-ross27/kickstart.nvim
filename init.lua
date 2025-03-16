@@ -664,7 +664,7 @@ require('lazy').setup({
       local servers = {
         pyright = {},
         ruff = {},
-        eslint = {},
+        biome = {},
         ts_ls = {
           settings = {
             implicitProjectConfiguration = {
@@ -719,7 +719,7 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'ruff',
         'debugpy',
-        'prettierd',
+        'biome',
         'eslint',
         'ts_ls',
         'ansiblels',
@@ -780,8 +780,8 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'ruff_format' },
-        javascript = { 'prettierd' },
-        typescript = { 'prettierd' },
+        javascript = { 'biome' },
+        typescript = { 'biome' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
