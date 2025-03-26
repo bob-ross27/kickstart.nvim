@@ -139,21 +139,35 @@ return {
     opts = {},
   },
   {
-    'ray-x/lsp_signature.nvim',
-    event = 'VeryLazy',
-    opts = {},
-    config = function(_, opts)
-      require('lsp_signature').setup(opts)
-    end,
-  },
-  {
     'danymat/neogen',
     config = function()
-      require('neogen').setup { snippet_engine = 'luasnip' }
+      require('neogen').setup { snippet_engine = 'nvim' }
     end,
     keys = {
       { '<leader>cf', "<cmd>lua require('neogen').generate({ type = 'func'})<cr>", desc = 'Generate [f]unc docs' },
       { '<leader>cd', "<cmd>lua require('neogen').generate()<cr>", desc = 'Generate [d]ocs' },
     },
+  },
+  {
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
+    version = '*',
+
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      -- See :h blink-cmp-config-keymap for defining your own keymap
+      keymap = { preset = 'default' },
+      appearance = {
+        nerd_font_variant = 'mono',
+      },
+      completion = { documentation = { auto_show = true } },
+      signature = { window = { show_documentation = true }, enabled = true },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+      fuzzy = { implementation = 'prefer_rust_with_warning' },
+    },
+    opts_extend = { 'sources.default' },
   },
 }
