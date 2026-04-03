@@ -34,5 +34,9 @@ require('lazy').setup({
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
+
+-- Enable virtual text in diagnostics
+vim.diagnostic.config { virtual_text = true }
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
