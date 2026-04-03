@@ -42,3 +42,40 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize -3<CR>', { desc = 'Resize Pan
 -- Move line up and down
 vim.keymap.set('v', '<M-Up>', ":m '>+1<CR>gv=gv", { desc = 'Move line up' })
 vim.keymap.set('v', '<M-Down>', ":m '>-2<CR>gv=gv", { desc = 'Move line down' })
+
+-- Jump to the definition of the word under your cursor.
+--  This is where a variable was first declared, or where a function is defined, etc.
+--  To jump back, press <C-t>.
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]oto [D]efinition' })
+
+-- Find references for the word under your cursor.
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = '[G]oto [R]eferences' })
+
+-- Jump to the implementation of the word under your cursor.
+--  Useful when your language has ways of declaring types without an actual implementation.
+vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, { desc = '[G]oto [I]mplementation' })
+
+-- Jump to the type of the word under your cursor.
+--  Useful when you're not sure what type a variable is and you want to see
+--  the definition of its *type*, not where it was *defined*.
+vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { desc = 'Type [D]efinition' })
+
+-- Fuzzy find all the symbols in your current document.
+--  Symbols are things like variables, functions, types, etc.
+vim.keymap.set('n', '<leader>ds', vim.lsp.buf.document_symbol, { desc = '[D]ocument [S]ymbols' })
+
+-- Fuzzy find all the symbols in your current workspace.
+--  Similar to document symbols, except searches over your entire project.
+vim.keymap.set('n', '<leader>ws', vim.lsp.buf.workspace_symbol, { desc = '[W]orkspace [S]ymbols' })
+
+-- Rename the variable under your cursor.
+--  Most Language Servers support renaming across files, etc.
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
+
+-- Execute a code action, usually your cursor needs to be on top of an error
+-- or a suggestion from your LSP for this to activate.
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
+
+-- WARN: This is not Goto Definition, this is Goto Declaration.
+--  For example, in C this would take you to the header.
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[G]oto [D]eclaration' })
