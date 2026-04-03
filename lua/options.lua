@@ -70,3 +70,6 @@ vim.opt.scrolloff = 10
 -- Set split priority
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Add floating window border
+vim.opt.winborder = 'rounded'
