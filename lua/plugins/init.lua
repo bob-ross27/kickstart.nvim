@@ -163,16 +163,6 @@ return {
     },
   },
 
-  -- Searchable command reference with :CheatSheet
-  {
-    'sudormrfbin/cheatsheet.nvim',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-  },
-
   -- Add inline git history in floating windows
   'rhysd/git-messenger.vim',
 
@@ -233,6 +223,7 @@ return {
       { '<leader>cd', "<cmd>lua require('neogen').generate()<cr>", desc = 'Generate [d]ocs' },
     },
   },
+
   {
     'saghen/blink.cmp',
     dependencies = { 'rafamadriz/friendly-snippets' },
