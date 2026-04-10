@@ -28,7 +28,7 @@ return { -- Collection of various small independent plugins/modules
     require('mini.extra').setup()
 
     -- Picker
-    require('mini.pick').setup()
+    require('mini.pick').setup { mappings = { choose_marked = '<C-q>' } }
     vim.keymap.set('n', '<leader><leader>', '<Cmd>Pick buffers<CR>', { desc = '[ ] Find existing buffers' })
     vim.keymap.set('n', '<leader>sh', '<Cmd>Pick help<CR>', { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>sk', '<Cmd>Pick keymaps<CR>', { desc = '[S]earch [K]eymaps' })
