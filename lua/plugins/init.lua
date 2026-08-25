@@ -138,11 +138,10 @@ return {
   -- Refactor support with :Refactor
   {
     'ThePrimeagen/refactoring.nvim',
-    opts = {},
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
+      'lewis6991/async.nvim',
     },
+    lazy = false,
   },
 
   -- Edit files/directories as a buffer
